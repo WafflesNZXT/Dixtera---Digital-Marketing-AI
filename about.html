@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b0b0f" />
+  <title>About — Dixtera Digital Marketing & AI</title>
+  <meta name="description" content="Dixtera: content, social, email, branding, web design — plus Dixtera AI for customized marketing plans." />
+  <link rel="stylesheet" href="styles.css">
+  <!-- Tailwind via CDN for a clean, professional UI -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eef2ff', 100:'#e0e7ff', 200:'#c7d2fe', 300:'#a5b4fc',
+              400:'#818cf8', 500:'#6366f1', 600:'#4f46e5', 700:'#4338ca',
+              800:'#3730a3', 900:'#312e81'
+            }
+          },
+          boxShadow: {
+            soft: '0 8px 30px rgba(0,0,0,0.06)'
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="min-h-screen bg-white text-zinc-900 dark:bg-zinc-950 dark:text-white">
+  <!-- SVG Icons (sprite) -->
+  <svg xmlns="http://www.w3.org/2000/svg" class="hidden">
+    <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2L3 14h6l-1 8 10-12h-6l1-8z" fill="currentColor"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5a3 3 0 013-3h10a3 3 0 013 3v8a3 3 0 01-3 3H9l-5 5V5z" fill="currentColor"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.77 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z" fill="currentColor"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M3 12h14M11 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 2l1.5 4 4 1.5-4 1.5-1.5 4-1.5-4-4-1.5 4-1.5L12 2z" fill="currentColor"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><path d="M11 4a7 7 0 105.293 12.293l3.707 3.707 1.414-1.414-3.707-3.707A7 7 0 0011 4zm0 2a5 5 0 110 10 5 5 0 010-10z" fill="currentColor"/></symbol>
+  </svg>
+  <!-- Header / Nav -->
+  <header class="sticky top-0 z-40 border-b border-black/5 bg-white/60 dark:bg-zinc-950/60 glass">
+    <div class="max-w-7xl mx-auto h-16 px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2">
+        <div class="h-9 w-9 rounded-2xl bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500"></div>
+        <span class="text-lg sm:text-xl font-extrabold tracking-tight">Dixtera</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-1">
+        <a href="index.html" class="px-4 py-2 rounded-xl font-medium hover:bg-black/5">Home</a>
+        <a href="services.html" class="px-4 py-2 rounded-xl font-medium hover:bg-black/5">Services</a>
+        <a href="about.html" class="px-4 py-2 rounded-xl font-medium hover:bg-black/5">About</a>
+        <a href="contact.html" class="px-4 py-2 rounded-xl font-medium hover:bg-black/5">Contact</a>
+        <button id="openSearch" class="ml-2 inline-flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-black/5">
+          <svg class="w-5 h-5"><use href="#i-search"/></svg> <span class="hidden sm:inline">Search</span>
+        </button>
+        <a href="chat.html" class="ml-2 inline-flex items-center gap-2 rounded-2xl px-5 py-3 font-semibold shadow ring-1 ring-zinc-900/5 bg-zinc-900 text-white hover:shadow-lg">
+          <svg class="w-5 h-5"><use href="#i-chat"/></svg> Customized Plan
+        </a>
+      </nav>
+      <button id="mobileBtn" class="md:hidden p-2 rounded-xl hover:bg-black/5" aria-label="Toggle menu">
+        <svg class="w-6 h-6" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden px-4 pb-4">
+      <div class="flex flex-col gap-2">
+        <button class="px-4 py-2 rounded-xl font-medium hover:bg-black/5" id="mobileSearch">
+          <span class="inline-flex items-center gap-2"><svg class="w-5 h-5"><use href="#i-search"/></svg> Search</span>
+        </button>
+        <a href="index.html" class="px-4 py-2 rounded-xl font-medium hover:bg-black/5">Home</a>
+        <a href="services.html" class="px-4 py-2 rounded-xl font-medium hover:bg-black/5">Services</a>
+        <a href="about.html" class="px-4 py-2 rounded-xl font-medium hover:bg-black/5">About</a>
+        <a href="contact.html" class="px-4 py-2 rounded-xl font-medium hover:bg-black/5">Contact</a>
+        <a href="chat.html" class="px-4 py-2 rounded-xl font-semibold text-white bg-zinc-900"> <span class="inline-flex items-center gap-2"><svg class="w-5 h-5"><use href="#i-chat"/></svg> Customized Plan</span></a>
+      </div>
+    </div>
+  </header>
+  <!-- Main -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <!-- About -->
+    <section id="route-about" class="route active">
+      <div class="text-center mb-8">
+        <p class="mb-3"><span class="inline-flex items-center rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 px-3 py-1 text-xs font-semibold text-white shadow">Who we are</span></p>
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">About Dixtera</h2>
+        <p class="mt-3 text-zinc-600 dark:text-zinc-300 max-w-2xl mx-auto">Five high‑schoolers building bold brands for the internet.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="rounded-2xl border border-white/10 bg-white/70 dark:bg-zinc-900/60 glass p-6 shadow-soft">
+          <h3 class="text-xl font-bold">Our story</h3>
+          <p class="mt-3 text-zinc-700 dark:text-zinc-300">We started Dixtera because great marketing shouldn't be slow or expensive. We ship fast, learn even faster, and keep your brand voice at the center. From long‑form content to short‑form reels, from logos to landing pages — we do it all with heart.</p>
+          <ul class="mt-4 grid sm:grid-cols-2 gap-2 text-sm">
+            <li class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-green-500"></span> Student‑run, founder‑friendly</li>
+            <li class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-green-500"></span> Transparent pricing</li>
+            <li class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-green-500"></span> Weekly updates & reports</li>
+            <li class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-green-500"></span> No fluff — just results</li>
+          </ul>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-white/70 dark:bg-zinc-900/60 glass p-6 shadow-soft">
+          <h3 class="text-xl font-bold">Our process</h3>
+          <ol class="mt-3 space-y-3 text-zinc-700 dark:text-zinc-300">
+            <li class="flex items-start gap-3"><span class="mt-0.5 flex h-6 w-6 items-center justify-center rounded-full bg-indigo-500/10 text-indigo-600 font-bold text-xs">1</span><div><p class="font-semibold">Discover</p><p class="text-sm">Quick call & goals alignment</p></div></li>
+            <li class="flex items-start gap-3"><span class="mt-0.5 flex h-6 w-6 items-center justify-center rounded-full bg-indigo-500/10 text-indigo-600 font-bold text-xs">2</span><div><p class="font-semibold">Plan</p><p class="text-sm">Strategy, calendar, brand kit</p></div></li>
+            <li class="flex items-start gap-3"><span class="mt-0.5 flex h-6 w-6 items-center justify-center rounded-full bg-indigo-500/10 text-indigo-600 font-bold text-xs">3</span><div><p class="font-semibold">Create</p><p class="text-sm">Content production & design</p></div></li>
+            <li class="flex items-start gap-3"><span class="mt-0.5 flex h-6 w-6 items-center justify-center rounded-full bg-indigo-500/10 text-indigo-600 font-bold text-xs">4</span><div><p class="font-semibold">Launch</p><p class="text-sm">Scheduling, ads, emails</p></div></li>
+            <li class="flex items-start gap-3"><span class="mt-0.5 flex h-6 w-6 items-center justify-center rounded-full bg-indigo-500/10 text-indigo-600 font-bold text-xs">5</span><div><p class="font-semibold">Optimize</p><p class="text-sm">Analytics, A/B tests, iterate</p></div></li>
+          </ol>
+        </div>
+      </div>
+      <div class="text-center my-10">
+        <h3 class="text-2xl font-bold">The team</h3>
+        <p class="text-zinc-600 dark:text-zinc-300">Five creatives, one mission: help your brand grow.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
+        <div class="rounded-2xl border border-white/10 bg-white/70 dark:bg-zinc-900/60 glass p-6 shadow-soft text-center"><div class="mx-auto h-20 w-20 rounded-2xl bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500"><img src="John Profile.jpeg" alt="John Zaidi"></div><h4 class="mt-3 font-semibold">John Zaidi</h4><p class="text-xs text-zinc-600 dark:text-zinc-400">Finance and Admin Lead</p></div>
+        <div class="rounded-2xl border border-white/10 bg-white/70 dark:bg-zinc-900/60 glass p-6 shadow-soft text-center"><div class="mx-auto h-20 w-20 rounded-2xl bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500"><img src="wafisyedlogoface.png" alt="Wafi Syed"></div><h4 class="mt-3 font-semibold">Wafi Syed</h4><p class="text-xs text-zinc-600 dark:text-zinc-400">Service Developement Lead</p></div>
+        <div class="rounded-2xl border border-white/10 bg-white/70 dark:bg-zinc-900/60 glass p-6 shadow-soft text-center"><div class="mx-auto h-20 w-20 rounded-2xl bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500"><img src="M Amin Profile.jpeg" alt="Mohammad Amin"></div><h4 class="mt-3 font-semibold">Mohammad Amin</h4><p class="text-xs text-zinc-600 dark:text-zinc-400">Marketing and Branding Lead</p></div>
+        <div class="rounded-2xl border border-white/10 bg-white/70 dark:bg-zinc-900/60 glass p-6 shadow-soft text-center"><div class="mx-auto h-20 w-20 rounded-2xl bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500"><img src="Ali R Profile.jpeg" alt="Ali Rezaian"></div><h4 class="mt-3 font-semibold">Ali Rezaian</h4><p class="text-xs text-zinc-600 dark:text-zinc-400">Sales and Partnerships Lead</p></div>
+        <div class="rounded-2xl border border-white/10 bg-white/70 dark:bg-zinc-900/60 glass p-6 shadow-soft text-center"><div class="mx-auto h-20 w-20 rounded-2xl bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500"><img src="Wali Profile.jpeg" alt="Wali Zaidi"></div><h4 class="mt-3 font-semibold">Wali Zaidi</h4><p class="text-xs text-zinc-600 dark:text-zinc-400">Operations and Logistics</p></div>
+      </div>
+    </section>
+  </main>
+  <!-- Footer -->
+  <footer class="mt-20 border-t border-black/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 text-sm flex flex-col sm:flex-row gap-4 items-center justify-between">
+      <p class="text-zinc-600 dark:text-zinc-400">© <span id="year"></span> Dixtera — built by 5 creative high‑schoolers.</p>
+      <div class="flex items-center gap-3">
+        <a href="about.html" class="hover:underline">About</a>
+        <a href="services.html" class="hover:underline">Services</a>
+        <a href="contact.html" class="hover:underline">Contact</a>
+        <a href="chat.html" class="hover:underline">Customized Plan</a>
+      </div>
+    </div>
+  </footer>
+  <!-- App JS -->
+  <script src="script.js"></script>
+</body>
+</html>

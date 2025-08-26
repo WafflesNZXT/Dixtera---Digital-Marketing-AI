@@ -59,6 +59,8 @@ body {
   opacity: 1;
   transform: none;
 }
+
+
 .glass {
   backdrop-filter: blur(10px);
 }

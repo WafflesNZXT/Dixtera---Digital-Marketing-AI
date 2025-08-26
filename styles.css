@@ -60,10 +60,18 @@ body {
   transform: none;
 }
 
-
-.glass {
-  backdrop-filter: blur(10px);
+.main-logo {
+  width: 50px;
+  background-color: white;
+  border-radius: 25%;
 }
+
+.title {
+  color: white;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  margin-left: -200px;
+}
+
 /* Layout */
 .max-w-7xl {
   max-width: 80rem;
@@ -172,6 +180,28 @@ body {
 .pb-4 {
   padding-bottom: 1rem;
 }
+
+/*Profile Picture Styles*/
+.johnpfp {
+  border-radius: 50%;
+}
+
+.wafipfp {
+  border-radius: 50%;
+}
+
+.maminpfp {
+  border-radius: 50%;
+}
+
+.alirpfp {
+  border-radius: 50%;
+}
+
+.walipfp {
+  border-radius: 50%;
+}
+
 /* Flexbox & Grid */
 .flex {
   display: flex;

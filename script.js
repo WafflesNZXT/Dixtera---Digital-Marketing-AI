@@ -15,7 +15,7 @@ const SERVICE_CATEGORIES = [
     ],
   },
   {
-    title: "Website and App Design",
+    title: "Website Building and Design",
     items: [
       "UX (User Experience) design",
       "UI (User Interface) design",

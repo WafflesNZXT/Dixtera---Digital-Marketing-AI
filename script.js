@@ -1,50 +1,31 @@
-// --- Data (same as before) ---
+// --- Data (for services page) ---
 const SERVICE_CATEGORIES = [
-  {
-    title: "AI Strategy & Automation (Dixtera AI)",
-    items: [
-      "Customized marketing plan generator (opens chat)",
-      "AI chatbot integration (Landbot)",
-      "Content automation workflows",
-      "AI-assisted copy & image ideation",
-      "Lead qualification bots",
-      "Analytics insights & reporting assistants",
-    ],
-  },
   {
     title: "Branding and Design",
     items: [
-      "Brand strategy & positioning",
-      "Brand architecture & messaging",
       "Defining brand voice & tone",
       "Logo design",
       "Color palette selection",
       "Typography selection",
       "Brand style guide creation",
-      "Visual identity system development",
       "Stationery & business card design",
       "Packaging design",
       "Marketing collateral design (brochures, flyers, posters)",
       "Rebranding services",
-      "Brand launch campaigns",
     ],
   },
   {
     title: "Website and App Design",
     items: [
-      "UX (User Experience) design & research",
-      "UI (User Interface) design & prototyping",
-      "Wireframing & mockup creation",
+      "UX (User Experience) design",
+      "UI (User Interface) design",
+      "Wireframing",
       "Responsive website design (desktop, tablet, mobile)",
-      "Mobile app design (iOS & Android)",
       "Custom graphic & icon design",
-      "CMS integration (WordPress, Shopify, etc.)",
-      "E-commerce website design",
       "Web accessibility compliance (WCAG)",
       "Interactive elements & animations",
       "Usability testing",
       "Website maintenance & updates",
-      "Conversion rate optimization (CRO)",
     ],
   },
 ];
@@ -69,11 +50,11 @@ document.addEventListener('DOMContentLoaded', function() {
       card.className = 'rounded-2xl border border-white/10 bg-white/70 dark:bg-zinc-900/60 glass p-6 shadow-soft';
       const id = 'acc-'+idx;
       card.innerHTML = `
-        <button class="w-full flex items-center justify-between text-left" aria-expanded="${idx===0}">
+        <button class="w-full flex items-center justify-between text-left" aria-expanded="false">
           <span class="text-xl font-bold">${cat.title}</span>
           <svg class="w-5 h-5 transition-transform" data-acc-arrow><use href="#i-arrow"/></svg>
         </button>
-        <div id="${id}" class="overflow-hidden transition-[max-height,opacity] duration-300" style="max-height:${idx===0? '1000px':'0'}; opacity:${idx===0?1:0}">
+        <div id="${id}" class="overflow-hidden transition-[max-height,opacity] duration-300" style="max-height:0; opacity:0">
           <ul class="mt-4 space-y-2 text-zinc-700 dark:text-zinc-300">
             ${cat.items.map(it => `<li class='flex items-start gap-2'><span class='mt-2 h-1.5 w-1.5 rounded-full bg-gradient-to-r from-indigo-500 to-pink-500'></span><span>${it}</span></li>`).join('')}
           </ul>
@@ -91,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
       });
       servicesGrid.appendChild(card);
     });
-  }
+};
   // Mobile menu toggle
   const mobileBtn = document.getElementById('mobileBtn');
   const mobileMenu = document.getElementById('mobileMenu');
